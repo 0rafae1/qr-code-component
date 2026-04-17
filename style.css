@@ -3,10 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --color-bg: hsl(212, 45%, 89%);
+    --color-card: hsl(0, 0%, 100%);
+    --color-title: hsl(218, 44%, 22%);
+    --color-text: hsl(216, 15%, 48%);
+    --shadow-card: 0 25px 25px 0 rgba(0, 0, 0, 0.0477);
+    --attribution-link: hsl(228, 45%, 44%);
+}
 
 body{
     font-family: 'Outfit', sans-serif;
-    background-color: #D5E1EF;
+    background-color: var(--color-bg);
 }
 
 main{
@@ -14,19 +22,20 @@ main{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 16px;
 }
 
 .card{
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: var(--color-card);
     padding: 16px 16px 40px 16px;
     border-radius: 20px;
     text-align: center;
-    width: 320px;
-    height: 499px;
+    width: 100%;
+    max-width: 320px;
     gap: 24px;
-    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.0477);
+    box-shadow: var(--shadow-card);
 }
 
 .card img{
@@ -44,14 +53,14 @@ main{
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0;
-    color: #1F314F;
+    color: var(--color-title);
 }
 .card-text p {
     font-size: 15px;
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: 0.2px;
-    color: #68778D;
+    color: var(--color-text);
 }
 
 .attribution { 
@@ -60,5 +69,5 @@ main{
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--attribution-link);
 }
