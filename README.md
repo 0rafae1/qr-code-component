@@ -31,26 +31,29 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- [Google Fonts](https://fonts.google.com/) - For typography
+- Modern CSS functions (`clamp()`, `min()`) - For fluid responsiveness
+- Dynamic Viewport Units (`100dvh`) - For better mobile browser support
 
 ### What I learned
 
-During the project, I strengthened important HTML and CSS fundamentals, mainly around layout structuring and clean styling practices.
+During this project, I focused on creating a responsive layout using modern CSS techniques that minimize the need for complex Media Queries. I learned how to use CSS functions to calculate sizes dynamically:
 
-I used Flexbox to center elements properly and organized the components by separating layout responsibilities. I chose to use `gap` to create spacing that is more consistent and easier to maintain between elements.
+- Fluid Responsiveness: I used `min()` to control the card's maximum width and `clamp()` to allow the title font size to scale smoothly between mobile and desktop viewports.
+- Dynamic Units: I implemented `100dvh` for the main container, which ensures the content is perfectly centered even on mobile browsers where address bars can affect the viewport height.
+- Semantic Structure: I used `<figure>` and `<figcaption>` to group the QR code image and its description correctly from a semantic standpoint.
 
-I also applied semantic CSS variables to manage colors and shadows, which improves scalability and maintainability:
+Example of the fluid typography and layout logic I'm proud of:
 
 ```css
-:root {
-  --color-bg: hsl(212, 45%, 89%);
-  --color-card: hsl(0, 0%, 100%);
-  --color-title: hsl(218, 44%, 22%);
-  --color-text: hsl(216, 15%, 48%);
-  --shadow-card: 0 25px 25px 0 rgba(0, 0, 0, 0.0477);
+/* Title with fluid size between 1.25rem and 1.375rem */
+--fs-title: clamp(1.25rem, 1.1rem + 0.5vw, 1.375rem);
+
+/* Card that occupies 100% width but caps at 20rem */
+.card {
+    width: min(100%, 20rem);
 }
 ```
-
-To structure the component in a more modular way, related elements were grouped together, such as wrapping the text content in a `.card-text` container to better control spacing and styling.
 
 ### Continued development
 
